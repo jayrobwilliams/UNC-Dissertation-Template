@@ -1,0 +1,47 @@
+% Use proper margins.
+\geometry{letterpaper,left=1.25in,top=1in,right=1.25in,bottom=1in,nohead}
+
+
+
+% double-space text
+\doublespacing
+
+% Center chapter titles
+% Place chapter title, number, and name on same line
+% Make chapter headings all uppercase, standard font size
+% Omit page numbers
+\titleformat{\chapter}[hang]{\normalfont\fillast\bfseries}{\MakeUppercase{\chaptertitlename} \thechapter: }{0em}{\MakeUppercase}[\thispagestyle{empty}]
+
+% Make section headings normal font size, bold
+\titleformat*{\section}{\normalfont\bfseries}
+\titleformat*{\subsection}{\normalfont\bfseries}
+\titleformat*{\subsubsection}{\normalfont\bfseries}
+
+% Extend to 2in top margins for chapter headings
+\titlespacing{\chapter}{0in}{0.62in}{11pt}
+
+% Indent paragraphs four spaces throughout the thesis/dissertation.
+\setlength{\parindent}{4ex}
+
+% Tweak spacing of paragraph labels.
+\titlespacing{\paragraph}{0in}{0.08in}{0.07in}
+
+% We want numbered subsubsections
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% We need to double-space between footnotes.
+\setlength{\footnotesep}{13pt}
+
+% Footnotes only one point smaller than text
+\renewcommand{\footnotesize}{\small}
+
+% We don't want crazy vertical spacing.
+\raggedbottom
+
+% We don't want abandoned words.
+\clubpenalty=10000 
+\widowpenalty=10000
+
+% Prevent awkward hyphenations.
+\hyphenation{Raj-kumar}

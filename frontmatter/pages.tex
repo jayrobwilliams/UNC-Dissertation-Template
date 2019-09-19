@@ -1,0 +1,51 @@
+
+% front matter pages use 2in top margin
+\newgeometry{left=1.25in,top=2in,right=1.25in,bottom=1in,nohead}
+\pagenumbering{roman}
+
+%1. Title Page
+
+\input{frontmatter/titlepage}
+
+%2. Copyright Page (optional)
+\newgeometry{left=1.25in,top=8.33in,right=1.25in,bottom=1in,nohead}
+
+\input{frontmatter/copyright}
+\newgeometry{left=1.25in,top=2in,right=1.25in,bottom=1in,nohead}
+
+%3. Abstract
+
+% Normal pages from here on out; TOC title takes care of 2in requirement.
+\restoregeometry
+
+\input{frontmatter/abstract}
+
+%4. Dedication, Acknowledgement(s) and/or Preface (all optional)
+
+\input{frontmatter/dedication}
+\input{frontmatter/acknowledgement}
+
+%\input{frontmatter/preface}
+
+
+
+
+%5. Table of Contents, with page references
+\input{frontmatter/contents}
+
+
+%6. List of Tables, with titles and page references (if applicable)
+
+\input{frontmatter/tables}
+
+
+%7. List of Figures or Illustrations, with titles and page references (if applicable)
+
+\input{frontmatter/figures}
+
+%8. List of Abbreviations (if applicable)
+\input{frontmatter/abbreviations}
+
+%9. List of Symbols (if applicable)
+
+\pagenumbering{arabic}

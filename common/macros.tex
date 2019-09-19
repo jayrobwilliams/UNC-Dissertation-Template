@@ -1,0 +1,31 @@
+%% Flush words right at end of paragraph.
+%% From: http://tex.stackexchange.com/questions/16330/hfill-after-linebreak
+\newcommand\rightparend[1]{{%
+      \unskip\nobreak\hfil\penalty50
+      \hskip2em\hbox{}\nobreak\hfil\textbf{#1}%
+      \parfillskip=0pt \finalhyphendemerits=0 \par}}
+
+% Indented hypothesis environment, subhypotheses
+\theoremindent1\parindent
+\newtheorem{hyp}{Hypothesis}
+\newtheorem{prop}{Proposition}
+\makeatletter
+\newcounter{subhyp} 
+\let\savedc@hyp\c@hyp
+\newenvironment{subhyp}
+{%
+	\setcounter{subhyp}{0}%
+	\stepcounter{hyp}%
+	\edef\saved@hyp{\thehyp}% Save the current value of hyp
+	\let\c@hyp\c@subhyp     % Now hyp is subhyp
+	\renewcommand{\thehyp}{\saved@hyp\alph{hyp}}%
+}
+{}
+\newcommand{\normhyp}{%
+	\let\c@hyp\savedc@hyp % revert to the old one
+	\renewcommand\thehyp{\arabic{hyp}}%
+} 
+\makeatother
+
+% Use for commenting
+\newcommand{\yncomment}[1]{{\textcolor{blue}{\textsc{\textbf{[#1 --YN]}}}}}
